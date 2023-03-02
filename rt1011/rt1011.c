@@ -832,6 +832,12 @@ StartCodec(
 	else if (pDevice->UID == 1) {
 		rt1011_set_tdm_slot(pDevice, 8, 2, 4, 24);
 	}
+	else if (pDevice->UID == 2) {
+		rt1011_set_tdm_slot(pDevice, 1, 1, 4, 24);
+	}
+	else if (pDevice->UID == 3) {
+		rt1011_set_tdm_slot(pDevice, 2, 2, 4, 24);
+	}
 
 	//Set power mode
 	rt1011_reg_write(pDevice, RT1011_POWER_1, 0xe0a0);
@@ -842,19 +848,6 @@ StartCodec(
 	rt1011_reg_write(pDevice, RT1011_SPK_TEMP_PROTECT_0, 0xc0cd);
 	rt1011_reg_write(pDevice, RT1011_POWER_9, 0xa860);
 	rt1011_reg_write(pDevice, RT1011_CLASSD_INTERNAL_SET_1, 0x1701);
-
-	/*if (pDevice->UID == 0) {
-		rt1011_set_tdm_slot(pDevice, 1, 1, 4, 24);
-	}
-	else if (pDevice->UID == 1) {
-		rt1011_set_tdm_slot(pDevice, 2, 2, 4, 24);
-	}
-	else if (pDevice->UID == 2) {
-		rt1011_set_tdm_slot(pDevice, 4, 1, 4, 24);
-	}
-	else if (pDevice->UID == 3) {
-		rt1011_set_tdm_slot(pDevice, 8, 2, 4, 24);
-	}*/
 
 	pDevice->DevicePoweredOn = TRUE;
 	return status;
