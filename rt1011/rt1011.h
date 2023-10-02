@@ -80,6 +80,7 @@ typedef struct _RT1011_CONTEXT
 	PVOID CSAudioAPICallbackObj;
 
 	BOOLEAN CSAudioManaged;
+	BOOLEAN CSAudioRequestsOn;
 
 	BOOLEAN firstInitDone;
 	UINT16 r0_reg, cali_done;
