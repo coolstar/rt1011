@@ -1165,7 +1165,6 @@ Status
 	NTSTATUS status = STATUS_SUCCESS;
 
 	status = StopCodec(pDevice);
-	pDevice->firstInitDone = FALSE;
 
 	return STATUS_SUCCESS;
 }
